@@ -1,0 +1,200 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,500;0,600;1,600&family=IBM+Plex+Sans:ital,wght@0,600;1,300;1,500;1,600&display=swap');
+
+:root {
+  --color-body:#b6cbce;
+  --color-heading:#eef3db;
+  --color-teal:#033f47;
+  --color-darkteal:#022a30;
+  --color-lime:#e0f780;
+  --color-lime2:#deff58;
+  --color-grey1:#b6cbce;
+  --color-grey2:#b6cbce;
+  --color-peachbrown:#ac86ae;
+  --color-peach:#d79aa2;
+  --color-brightpeach:#b1575a;
+  --sidebar-width:240px;
+  --font-base:"Bai Jamjuree";
+}
+
+body {
+  background:linear-gradient(hsla(188, 92%, 10%, 0.6),hsla(188, 92%, 10%, 0.6)),url(../images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--font-base), sans-serif;
+  
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+a {
+  text-decoration: darkgray;
+  color: var(#033f47);
+  transition: all 0.4s ease;
+}
+a :hover{
+  color: var(#033f47);
+}
+img {
+  width: 100%;
+}
+
+.bg-base{
+  background-color: #033f47;
+}
+.text-brand{
+  color: #c8e84a;
+}
+
+.full-height{
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid (rgba(255, 255, 255, 0.1));
+}
+
+.shadow-effect{
+  transition: all 0.5s;
+}
+.shadow-effect:hover{
+  box-shadow: -4px 3px 0 0 #deff58;
+}
+.iconbox{
+  width: 40px;
+  height: 40px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background-color: #d0f443;
+  color: #070706;
+}
+.navbar{
+  background-color: var(--color-teal);
+}
+h1 {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* navbar */
+.navbar .nav-link {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+.navbar .nav-link:hover {
+  color:var(--color-lime2);
+}
+.navbar .nav-link.active{
+  color: #d0f443;
+}
+@media(min-width:992px) {
+  .navbar{
+    min-height:100vh;
+    width:var(--sidebar-width);
+    background:linear-gradient(hsla(188, 76%, 17%, 0.3),hsla(188, 68%, 16%, 0.4)),url(../images/side-bar\ background.jpg);
+    background-size: cover;
+    background-position: center;
+
+  }
+  .navbar-brand img {
+    border: 5px solid var(--color-lime);
+  }
+}
+
+/* content wrapper */
+#content-wrapper{
+  padding-left: var(--sidebar-width);
+}
+
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color:#070706; /* Text color */
+  background-color:#d0f443; /* Background color */
+  border: none; /* Remove border */
+  text-decoration: none; /* Remove underline */
+  margin-right: 10px; /* Space between buttons */
+}
+
+.btn-circle:hover {
+  background-color: #555; /* Change background color on hover */
+}
+
+/* button */
+.btn{
+  padding: 10px 15px ;
+  font-weight: 700;
+}
+.btn-brand {
+  background-color:#d0f443;
+  border-color:#c8e84a;
+  color:#070706;
+}
+.btn-brand:hover,
+.btn-brand:focus{
+  background-color:#95f071;
+  color:#070706;
+  border-color:#8dff58;
+}
+.link-custom{
+  font-weight: 200;
+  position:relative;
+  color:#e1f494;
+  font-size: 95%;
+}
+.link-custom::after{
+  content: "";
+  width: 0%;
+  height: 1.5px;
+  background-color: #dbfa5c;
+  position: absolute;
+  left: 0;
+  top: 110%;
+  transition: all 0.5s;
+}
+.link-custom:hover::after{
+  width: 100%;
+}
+.container1{
+  display: grid;
+  place-items: center;
+}
+.project-description{
+  color:#fafeec;
+}
+.project-name{
+  color:#e1f494
+}
+.project1-description{
+  color:#deff58
+}
+
+.image-collection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around; /* Distributes space between items */
+}
+
+.image-collection img {
+  width: 150px; /* Set a fixed width or use percentages */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
