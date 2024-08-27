@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- AOS CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Define consistent styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #faf8f8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    h1, h4 {
+      color: #007bff;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    a {
+      color: white;
+    }
+    a:hover {
+      color: lightgray;
+    }    
+    /* Improve responsiveness */
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 0 10px;
+      }
+    }
+    .image-collection {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      /* Optional: align items to start */
+      align-items: flex-start;
+    }
+
+    .image-collection img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .image-collection img:hover {
+      transform: scale(1.05);
+    }
+
+    .image-collection .bill-image {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    }
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      width: 80%; /* Could be more or less, depending on screen size */
+      max-width: 700px;
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <title>My Portfolio</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Other project sections -->
+
+    <h1 class="project1-description">HairFall stage Classifier</h1>
+    <p class="project-description">
+      The goal of this project was to develop a predictive model that can accurately determine the likelihood of hair loss based on various input features. By leveraging a Support Vector Machine (SVM) with a polynomial kernel, the model aimed to capture complex, non-linear relationships in the data that could influence hair loss. The project involved careful data preprocessing, including standardization, to ensure the model performed optimally. The outcome was evaluated using key metrics such as a confusion matrix and classification report, demonstrating the model's effectiveness.
+    </p>
+    <h4 class="project1-description">Key Features:</h4>
+    <ul class="project-description">
+       <li>SVM Model: Utilized a Support Vector Machine with a polynomial kernel for accurate hair loss prediction.</li>
+       <li>Data Standardization: Applied StandardScaler to normalize features for better model performance.</li>
+       <li>Model Evaluation: Assessed accuracy using a confusion matrix and classification report.</li>
+       <li>Training/Test Split: Implemented an 80-20 split to validate model performance on unseen data.</li>
+       <li>Predictive Insights: Identified key factors contributing to hair loss.</li>
+       <li>Tools Used: Employed Pandas, NumPy, and Scikit-learn for data processing and model development.</li>
+     
+    </ul>
+    <h4 class="project1-description">Technology Stack:</h4>
+    <ul class="project-description">
+      <li>Pandas for data manipulation.</li>
+      <li>NumPy for numerical computations.</li>
+      <li>Scikit-learn for implementing the SVM model, data preprocessing, and evaluation.</li>
+    </ul>
+    <h4 class="project1-description">GITHUB REPOSITORY:</h4>
+    <p class="project-description">
+      <a href="https://github.com/amrutashingankuli682/Hair-Fall-stage-Classifier" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </p>    
+    <!-- <h4 class="project1-description">User Interface:</h4> -->
+
+    <!-- <div class="image-collection">
+      <img src="./images/tryon1.png" alt="Try-On Interface" onclick="openModal(this.src)">
+      <img src="./images/tryon2.png" alt="Try-On Process" onclick="openModal(this.src)">
+      <img src="./images/tryon3.png" alt="Try-On Results" onclick="openModal(this.src)">
+    </div> -->
+  
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script> <!-- AOS JS -->
+  <script>
+    AOS.init({
+      offset: 120,
+      delay: 0,
+      duration: 1000,
+      easing: 'ease',
+      once: false,
+      mirror: false,
+      anchorPlacement: 'top-bottom',
+    });
+
+    function openModal(src) {
+      document.getElementById("imageModal").style.display = "block";
+      document.getElementById("modalImage").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Close the modal if the user clicks outside of the image
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("imageModal")) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
